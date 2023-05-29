@@ -1,6 +1,2 @@
-#Task number two
-A,B = set(input()), set(input())
-if B.issubset(A):
-    print('YES')
-else:
-    print("NO")
+#Task number three
+print(*sorted((set(int(ind) for ind in input().split())  & set(int(ind) for ind in input().split()) ) - set(int(ind) for ind in input().split()) , reverse=True))
