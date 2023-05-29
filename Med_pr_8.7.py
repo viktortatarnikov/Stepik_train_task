@@ -1,6 +1,6 @@
-#Task number one
-A, B = set(input()), set(input())
-if A.isdisjoint(B):
-    print('NO')
-else:
+#Task number two
+A,B = set(input()), set(input())
+if B.issubset(A):
     print('YES')
+else:
+    print("NO")
