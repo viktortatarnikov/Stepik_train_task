@@ -1,7 +1,15 @@
-m, n = int(input()), int(input())
-list1 = [input() for _ in range(m + n)]
-set1 = set(list1)
-if len(set1) == len(list1):
-    print('NO')
+m = int(input())
+n = int(input())
+set1 = {input() for _ in range(n)}
+if m == 1:
+    print(*sorted(set1))
 else:
-    print(len(list1) - 2*(len(list1) - len(set1)))
+    for i in range(1, m):
+        n = int(input())
+        set2 = {input() for _ in range(n)}
+        set1 &= set2
+    print(*sorted(set1), sep='\n')
+
+
+
+
