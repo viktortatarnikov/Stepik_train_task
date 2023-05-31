@@ -1,2 +1,3 @@
-n, m, k, p = int(input()), int(input()), int(input()), int(input())
-print(n - m - k + p)
+n = input().split()
+n_set = set(n)
+print(len(n) - len(n_set))
