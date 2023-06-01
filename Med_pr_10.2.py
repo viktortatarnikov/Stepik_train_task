@@ -1,8 +1,15 @@
-lessons = {'CS101': {'audience_number': '3004', 'teacher': 'Хайнс', 'time': '8:00'},
-'CS102': {'audience_number': '4501', 'teacher': 'Альварадо', 'time': '9:00'},
-'CS103': {'audience_number': '6755', 'teacher': 'Рич', 'time': '10:00'},
-'NT110': {'audience_number': '1244', 'teacher': 'Берк', 'time': '11:00'},
-'CM241': {'audience_number': '1411', 'teacher': 'Ли', 'time': '13:00'}}
-log = input()
-a = lessons[log]
-print(log,': ', a['audience_number'], ', ', a['teacher'],', ', a['time'], sep='')
+d={".":'1', ",":'11', "?":'111', "!":'1111', ":":'11111',
+    "A":'2', "B":'22', "C":'222',
+    "D":'3', "E":'33', "F":'333',
+    "G":'4', "H":'44', "I":'444',
+    "J":'5', "K":'55', "L":'555',
+    "M":'6', "N":'66', "O":'666',
+    "P":'7', "Q":'77', "R":'777', "S": '7777',
+    "T":'8', "U":'88', "V":'888',
+    "W":'9', "X":'99', "Y":'999', "Z": '9999',
+    " ":'0', '"':''
+}
+sent = input().upper()
+
+for s in sent:
+    print(d[s], end='')
