@@ -1,29 +1,18 @@
-pets = [('Hatiko', 'Parker', 'Wilson', 50),
-        ('Rusty', 'Josh', 'King', 25),
-        ('Fido', 'John', 'Smith', 28),
-        ('Butch', 'Jake', 'Smirnoff', 18),
-        ('Odi', 'Emma', 'Wright', 18),
-        ('Balto', 'Josh', 'King', 25),
-        ('Barry', 'Josh', 'King', 25),
-        ('Snape', 'Hannah', 'Taylor', 40),
-        ('Horry', 'Martha', 'Robinson', 73),
-        ('Giro', 'Alex', 'Martinez', 65),
-        ('Zooma', 'Simon', 'Nevel', 32),
-        ('Lassie', 'Josh', 'King', 25),
-        ('Chase', 'Martha', 'Robinson', 73),
-        ('Ace', 'Martha', 'Williams', 38),
-        ('Rocky', 'Simon', 'Nevel', 32)]
+# Полу-рабочий код
+text = [word.strip('!&,.:;-') for word in input().lower().split()]
+words ={}
+for w in text:
+    words[w] = words.get(w, 0) + 1
+for ind in words.items():
+    if ind[1] == min(words.values()):
+        print(ind[0])
+        break
 
-result = {}
-for i in pets:
-    a = i[1:]
-    result[a] = result.get(a, 0)
-
-for i in result.keys():
-    dogs = list()
-    for j in pets:
-        if i == j[1:]:
-            dogs.append(j[0])
-    #dogs = tuple(dogs)
-    result[i] = dogs
-print(result)
+# Рабочий код (проходит все тесты)
+# dct = {}
+# lst = [word.strip('.,!?:;-') for word in input().lower().split()]
+# for word in lst:
+#     dct[word] = dct.get(word, 0) + 1
+# lst = [(value, key) for key, value in dct.items()]
+# lst.sort()
+# print(lst[0][1])
