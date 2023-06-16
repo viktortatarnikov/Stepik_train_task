@@ -1,14 +1,13 @@
-n = int(input())
-dictinary = {}
+word1, word2 = list(input()), list(input())
+# len_word1, len_word2 = len(word1), len(word2)
+# word1, word2 = set(word1), set(word2)
 
-for ind in range(n):
+if sorted(word1) == sorted(word2):
+    print('YES')
+else:
+    print('NO')
 
-    list2 = input().split(': ')
-    # print(list2[0], list2[1])
-    dictinary[list2[0].lower()] = dictinary.get(list2[0], list2[1])
+print(word2, word1)
 
-print(dictinary)
-zapros = [input().lower() for _ in range(int(input()))]
-for word in zapros:
-    print(dictinary.get(word, 'Не найдено'))
-
+# thing
+# night
