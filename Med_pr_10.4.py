@@ -1,9 +1,21 @@
-dic = {i[0]: i[1:] for i in [input().split() for _ in range(int(input()))]}
-req = []
+# Моё решение
+dic = {}
 for _ in range(int(input())):
-    req.append(input())
-for city in req:
-     for key, veriables in dic.items():
-         if city in veriables:
-             print(key)
+    value, key = input().lower().split()
+    dic[key] = dic.get(key, "") + (value + ' ')
 
+
+req = [input().lower() for _ in range(int(input()))]
+
+for name in req:
+    if name in dic.keys():
+         print(dic[name])
+    else:
+         print('абонент не найден')
+# Красивое решение
+# dct = {}
+# for _ in range(int(input())):
+#     phone, name = input().lower().split()
+#     dct.setdefault(name, []).append(phone)
+# for _ in range(int(input())):
+#     print(*dct.get(input().lower(), ['абонент не найден']))
