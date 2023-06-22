@@ -1,10 +1,11 @@
-import random as r
-import string
+import random
+matrix = [[1, 2, 3, 4],
+          [5, 6, 7, 8],
+          [9, 10, 11, 12],
+          [13, 14, 15, 16]]
+random.shuffle(matrix)
+for ind in matrix:
+    random.shuffle(ind)
 
-def generate_index():
 
-    return r.choice(string.ascii_uppercase) + r.choice(string.ascii_uppercase) + str(r.randint(0, 99)) + '_' + str(r.randint(0, 99)) + r.choice(string.ascii_uppercase) + r.choice(string.ascii_uppercase)
 
-print(generate_index())
-
-# print(r.choice(string.ascii_uppercase) + r.choice(string.ascii_uppercase))
