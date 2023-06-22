@@ -1,11 +1,7 @@
 import random
-matrix = [[1, 2, 3, 4],
-          [5, 6, 7, 8],
-          [9, 10, 11, 12],
-          [13, 14, 15, 16]]
-random.shuffle(matrix)
-for ind in matrix:
-    random.shuffle(ind)
-
+loter = set()
+while len(loter) < 100:
+    loter.add(random.randint(1000000, 9999999))
+print(*loter, sep='\n')
 
 
