@@ -1,15 +1,10 @@
 import random as r
+import string
 
-def generate_ip():
+def generate_index():
 
-    ip = ''
-    for _ in range(4):
-        ip += str(r.randint(0, 255)) + '.'
-    return ip[:-1]
+    return r.choice(string.ascii_uppercase) + r.choice(string.ascii_uppercase) + str(r.randint(0, 99)) + '_' + str(r.randint(0, 99)) + r.choice(string.ascii_uppercase) + r.choice(string.ascii_uppercase)
 
-print(generate_ip())
+print(generate_index())
 
-# Красивое решение
-
-# def generate_ip():
-#     return '.'.join(str(choice(range(256))) for _ in range(4))
+# print(r.choice(string.ascii_uppercase) + r.choice(string.ascii_uppercase))
