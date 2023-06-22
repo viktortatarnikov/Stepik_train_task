@@ -1,10 +1,14 @@
 import random
+# tiket = []
+# for ind in range(1, 8):
+#     while len(tiket) != ind:
+#         a = random.randint(1, 49)
+#         if a not in tiket:
+#             tiket.append(a)
+# print(*sorted(tiket))
+# Красивое решение
+tiket = set()
+while len(tiket) < 7:
+    tiket.add(random.randint(1,49))
 
-length = int(input())    # длина пароля
-for _ in range(length):
-    flag = random.randint(1, 2)
-    if flag == 1:
-        print(chr(random.randint(65, 90)), end='')
-    else:
-        print(chr(random.randint(97, 122)), end='')
-
+print(*sorted(tiket))
