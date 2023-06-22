@@ -9,6 +9,6 @@ import random
 # Красивое решение
 tiket = set()
 while len(tiket) < 7:
-    tiket.add(random.randint(1,49))
+    tiket.add(random.randint(1, 49))
 
 print(*sorted(tiket))
