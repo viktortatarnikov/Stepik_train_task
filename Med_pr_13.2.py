@@ -1,6 +1,7 @@
-from fractions import Fraction
+from fractions import *
+from  math import*
 n = int(input())
-s = 0
-for i in range(n):
-    s += Fraction(1, (i + 1)**2)
-print(s)
+
+lst = [Fraction(i, n-i) for i in range(n) if Fraction(i, n-i) < 1 and Fraction(i, n-i).numerator + Fraction(i, n-i).denominator == n]
+
+print(max(lst))
