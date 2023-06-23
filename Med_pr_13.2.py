@@ -1,7 +1,6 @@
 from fractions import Fraction
-a = input()
-b = input()
-print(a, '+', b, '=', Fraction(a) + Fraction(b))
-print(a, '-', b, '=', Fraction(a) - Fraction(b))
-print(a, '*', b, '=', Fraction(a) * Fraction(b))
-print(a, '/', b, '=', Fraction(a) / Fraction(b))
+n = int(input())
+s = 0
+for i in range(n):
+    s += Fraction(1, (i + 1)**2)
+print(s)
