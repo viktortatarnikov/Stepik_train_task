@@ -1,11 +1,10 @@
-def greet(*ar):
+def greet(name, *ar):
     res = [ind for ind in ar]
-    if len(res) != 1:
-        print('Hello,', end=' ')
-        for name in res:
-            print(name, end=' end ')
-        print('!')
+    words = 'Hello, ' + name
+    if len(res) != 0:
+        words += ' and ' + ' and '.join(res)
+        return words + '!'
     else:
-        print("Hello,", *ar, '!')
-    return
+        return words + '!'
 print(greet('Тимур'))
+print(greet('Тимур', 'Dfkthf', 'Саша'))
