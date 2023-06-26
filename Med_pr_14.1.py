@@ -1,8 +1,12 @@
 import turtle
 
-def star(size):
-    for _ in range(5):
-        turtle.forward(size)
-        turtle.left(144)
+def kvad(size):
+    turtle.pendown()
+    turtle.pensize(15)
+    turtle.dot()
+    turtle.penup()
+    turtle.forward(size)
 
-star(100)
+
+for i in range(10):
+    kvad(30)
