@@ -1,17 +1,8 @@
 import turtle
 
-def romb(size):
-    turtle.forward(size)
-    turtle.left(60)
-    turtle.forward(size)
-    turtle.left(120)
-    turtle.forward(size)
-    turtle.left(60)
-    turtle.forward(size)
-    turtle.left(120)
+def star(size):
+    for _ in range(5):
+        turtle.forward(size)
+        turtle.left(144)
 
-
-for _ in range(10):
-    romb(100)
-
-    turtle.left(36)
+star(100)
