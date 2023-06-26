@@ -1,4 +1,7 @@
-def sq_sum(*ar):
-    res = [ind**2 for ind in ar]
-    return sum(res)
-print(sq_sum(1, 2, 3))
+def mean(*ar):
+    res = [ind for ind in ar if type(ind) == int or type(ind) == float]
+    if len(res) != 0:
+        return sum(res)/len(res)
+    else:
+        return 0
+print(mean(0))
