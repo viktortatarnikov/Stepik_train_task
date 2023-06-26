@@ -1,7 +1,7 @@
 import turtle
 
 def squer(side):
-    turtle.left(22)
+    turtle.left(90)
     turtle.forward(side)
     turtle.left(90)
     turtle.forward(side)
@@ -11,8 +11,8 @@ def squer(side):
     turtle.forward(side)
     turtle.left(90)
 
-
-
-squer(100)
-squer(100)
-squer(100)
+for i in range(4):
+    squer(100)
+turtle.left(45)
+for _ in range(4):
+    squer(100)
