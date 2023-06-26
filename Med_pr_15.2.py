@@ -1,7 +1,11 @@
-def mean(*ar):
-    res = [ind for ind in ar if type(ind) == int or type(ind) == float]
-    if len(res) != 0:
-        return sum(res)/len(res)
+def greet(*ar):
+    res = [ind for ind in ar]
+    if len(res) != 1:
+        print('Hello,', end=' ')
+        for name in res:
+            print(name, end=' end ')
+        print('!')
     else:
-        return 0
-print(mean(0))
+        print("Hello,", *ar, '!')
+    return
+print(greet('Тимур'))
