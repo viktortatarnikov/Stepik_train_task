@@ -1,21 +1,10 @@
-import math
+lst = [num for num in input().split()]
 
 def f1(num):
-    return num**2
+    count = 0
+    for ind in num:
+        count += int(ind)
+    return count
 
-def f2(num):
-    return num**3
-
-def f3(num):
-    return num**0.5
-
-def f4(num):
-    return abs(num)
-
-def f5(num):
-    return math.sin(num)
-commands = {'квадрат': f1, 'куб': f2, 'корень': f3, 'модуль': f4, 'синус': f5}
-num = int(input())
-com = commands[input()]
-print(com(num))
+print(*sorted(lst, key=f1))
 
