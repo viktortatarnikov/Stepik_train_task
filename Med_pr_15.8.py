@@ -1,13 +1,15 @@
-is_non_negative_num = lambda x: True if x.replace('.', '', 1).isdigit() and float(x) >= 0 else False
-print(is_non_negative_num('10.34ab'))
-print(is_non_negative_num('10.45'))
-print(is_non_negative_num('-18'))
-print(is_non_negative_num('-34.67'))
-print(is_non_negative_num('987'))
-print(is_non_negative_num('abcd'))
-print(is_non_negative_num('123.122.12'))
-print(is_non_negative_num('123.122'))
+is_num = lambda x: True if set(x) <= set('-.1234567890') and x.count('.') <= 1 <= 1 and '-' not in x[1:]\
+    else False
+print(is_num('10.34ab'))
+print(is_num('10.45'))
+print(is_num('-18'))
+print(is_num('-34.67'))
+print(is_num('987'))
+print(is_num('abcd'))
+print(is_num('123.122.12'))
+print(is_num('-123.122'))
+print(is_num('--13.2'))
 
 # Красивое решение
-# is_non_negative_num = lambda s: s.count('.') <= 1 and set(s) <= set('.1234567890')
+# is_num = lambda x: x.lstrip("-").replace(".", "", 1).isdecimal()
 
