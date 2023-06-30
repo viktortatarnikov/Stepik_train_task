@@ -1,12 +1,10 @@
-func = lambda x: True if (x % 19 == 0 or x % 13 == 0) else False
-print(func(13))
-print(func(19))
+func = lambda x: True if x[0].lower() == x[-1].lower() == 'a' else False
+print(func('abcd'))
+print(func('bcda'))
+print(func('abcda'))
+print(func('Abcd'))
+print(func('bcdA'))
+print(func('abcdA'))
 
-print(func(10))
-print(func(26))
-
-print(func(38))
-print(func(13))
-
-
-
+# Красивое решение
+# func=lambda x: x[0] in 'aA' and x[-1] in 'aA'
