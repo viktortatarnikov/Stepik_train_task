@@ -1,17 +1,9 @@
-# def ignore_command(command):
-#     ignore = ['alias', 'configuration', 'ip', 'sql', 'select', 'update', 'exec', 'del', 'truncate']
-#
-#     for word in ignore:
-#         if word in command:
-#             return True
-#     return False
+countries = ['Russia', 'USA', 'UK', 'Germany', 'France', 'India']
+capitals = ['Moscow', 'Washington', 'London', 'Berlin', 'Paris', 'Delhi']
+population = [145_934_462, 331_002_651, 80_345_321, 67_886_011, 65_273_511, 1_380_004_385]
 
-def ignore_command(command):
-    ignore = ['alias', 'configuration', 'ip', 'sql', 'select', 'update', 'exec', 'del', 'truncate']
-    return any(map(lambda x: True if x in command else False, ignore))
+for strana, stolica, naselenie in zip(countries, capitals, population):
+    print(stolica, ' is the capital of ', strana, ', population equal ', naselenie, ' people.', sep='')
 
-
-print(ignore_command('get ip'))
-print(ignore_command('select all'))
-print(ignore_command('delete'))
-print(ignore_command('trancate'))
+# красивое решение
+# print(*map(lambda x: (f'{x[0]} is the capital of {x[1]}, population equal {x[2]} people.'), zip(capitals, countries, population)), sep='\n')
