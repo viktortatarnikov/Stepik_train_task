@@ -1,16 +1,8 @@
-def concat(*arg, sep=' '):
-    new_arg = [str(word) for word in arg]
-    res = sep.join(new_arg)
+from functools import reduce
 
-    return res
+def product_of_odds(data):   # data - список целых чисел
+
+    return reduce(lambda a, b: a*b, filter(lambda x: x % 2 == 1, data), 1)
 
 
-print(concat('hello', 'python', 'and', 'stepik'))
-print(concat('hello', 'python', 'and', 'stepik', sep='*'))
-print(concat('hello', 'python', sep='()()()'))
-print(concat('hello', sep='()'))
-print(concat(1, 2, 3, 4, 5, 6, 7, 8, 9, sep='$$'))
-
-# Красивое решение
-# def concat(*args, sep=' '):
-#     return sep.join(map(str, args))
+print(product_of_odds([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
