@@ -1,7 +1,14 @@
-def chek(password):
-    return all([any(map(lambda x: x.isdigit(), password)), any(map(lambda x: x.isalpha(), password)), len(password) >= 7,
-                any(map(lambda x: x.isupper(), password)), any(map(lambda x: x.islower(), password))])
-if chek(input()):
+lst = []
+skhool = []
+for _ in range(int(input())):
+
+    for ind in range(int(input())):
+        lst.append(int(input().split()[1]))
+    skhool.append(any(map(lambda x: x == 5, lst)))
+    lst = []
+
+
+if all(skhool):
     print('YES')
 else:
     print('NO')
