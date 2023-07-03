@@ -1,6 +1,1 @@
-abscissas = [float(ind) for ind in input().split()]
-ordinates = [float(ind) for ind in input().split()]
-applicates = [float(ind) for ind in input().split()]
-
-print(all(map(lambda x, y, z: x**2 + y**2 + z**2 <= 4, abscissas, ordinates, applicates)))
-
+print(all(map(lambda x: x.isdigit() and 0 <= int(x) <= 255, input().split('.'))))
