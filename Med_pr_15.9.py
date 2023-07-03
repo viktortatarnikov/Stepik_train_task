@@ -1,9 +1,6 @@
-countries = ['Russia', 'USA', 'UK', 'Germany', 'France', 'India']
-capitals = ['Moscow', 'Washington', 'London', 'Berlin', 'Paris', 'Delhi']
-population = [145_934_462, 331_002_651, 80_345_321, 67_886_011, 65_273_511, 1_380_004_385]
+abscissas = [float(ind) for ind in input().split()]
+ordinates = [float(ind) for ind in input().split()]
+applicates = [float(ind) for ind in input().split()]
 
-for strana, stolica, naselenie in zip(countries, capitals, population):
-    print(stolica, ' is the capital of ', strana, ', population equal ', naselenie, ' people.', sep='')
+print(all(map(lambda x, y, z: x**2 + y**2 + z**2 <= 4, abscissas, ordinates, applicates)))
 
-# красивое решение
-# print(*map(lambda x: (f'{x[0]} is the capital of {x[1]}, population equal {x[2]} people.'), zip(capitals, countries, population)), sep='\n')
