@@ -1,8 +1,4 @@
-from functools import reduce
+words = 'the world is mine take a look what you have started'.split()
 
-def product_of_odds(data):   # data - список целых чисел
+print(*map(lambda word: '"' + word + '"', words))
 
-    return reduce(lambda a, b: a*b, filter(lambda x: x % 2 == 1, data), 1)
-
-
-print(product_of_odds([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
