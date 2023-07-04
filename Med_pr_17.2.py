@@ -1,3 +1,3 @@
 file = open(input(), 'r', encoding='utf-8')
-print(file.read())
+print(file.readlines()[-2])
 file.close()
