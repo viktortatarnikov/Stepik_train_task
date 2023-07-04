@@ -1,8 +1,8 @@
-file = open('nums.txt', 'r', encoding='utf-8')
-nums = map(int, file.read().split())
-print(sum(nums))
+file = open('prices.txt', 'r', encoding='utf-8')
+
+print(sum(map(lambda x: int(x[1]) * int(x[2]), [n.split() for n in file.readlines()])))
 
 file.close()
 
-# В одну строчку
-# print(sum(map(int, open('numbers.txt').read().split())))
+# лучше только так
+# print('1286800')
