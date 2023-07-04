@@ -1,3 +1,8 @@
-file = open(input(), 'r', encoding='utf-8')
-print(file.readlines()[-2])
+import random as r
+file = open('lines.txt', 'r', encoding='utf-8')
+print(r.choice(file.readlines()))
+
 file.close()
+
+# Прикольное решение
+# print(set(f.readlines()).pop())
