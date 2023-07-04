@@ -1,8 +1,8 @@
-file = open('numbers.txt', 'r', encoding='utf-8')
-nums = [int(num) for num in file.readlines()]
+file = open('nums.txt', 'r', encoding='utf-8')
+nums = map(int, file.read().split())
 print(sum(nums))
 
 file.close()
 
-# Красивое решение
-# print(sum(map(int, file)))
+# В одну строчку
+# print(sum(map(int, open('numbers.txt').read().split())))
