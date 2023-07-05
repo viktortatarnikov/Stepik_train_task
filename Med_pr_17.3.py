@@ -1,6 +1,7 @@
-from random import choice
-with open('first_names.txt', 'r', encoding='utf-8') as ferst, open('last_names.txt', 'r', encoding='utf-8') as last:
-    names1 = list(map(str.strip, ferst.readlines()))
-    names2 = list(map(str.strip, last.readlines()))
-    for _ in range(3):
-        print(choice(names1), choice(names2))
+with open('population.txt', 'r', encoding='utf-8') as countrys:
+    names1 = list(map(str.strip, countrys.readlines()))
+    for ind in names1:
+        if ind[0] == 'G':
+            if int(ind.split('\t')[1]) > 500000:
+                print(ind.split('\t')[0])
+
