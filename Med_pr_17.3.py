@@ -1,7 +1,12 @@
-with open('population.txt', 'r', encoding='utf-8') as countrys:
-    names1 = list(map(str.strip, countrys.readlines()))
-    for ind in names1:
-        if ind[0] == 'G':
-            if int(ind.split('\t')[1]) > 500000:
-                print(ind.split('\t')[0])
+def read_csv():
+    with open('data.csv', 'r', encoding='utf-8') as data:
+        data_dikt = []
+        keys = data.readline().strip().split(',')
+        for value in data.readlines():
+            items = value.strip().split(',')
+            data_dikt.append(dict(zip(keys, items)))
+    return data_dikt
 
+
+for ind in read_csv():
+    print(*ind.items())
