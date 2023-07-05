@@ -1,3 +1,3 @@
-with open('data.txt', 'r', encoding='utf-8') as f:
-    for line in f.readlines()[::-1]:
-        print(line.strip())
+with open('lines.txt', 'r', encoding='utf-8') as f:
+    lines = [line.strip() for line in f]
+    print(*filter(lambda x: len(x) == len(max(lines, key=len)), lines), sep='\n')
