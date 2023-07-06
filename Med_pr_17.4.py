@@ -1,4 +1,5 @@
-import random as r
-with open('random.txt', 'w', encoding='utf-8') as file:
-    for _ in range(25):
-        print(r.randint(111, 777), file=file)
+with open('input.txt', 'r', encoding='utf-8') as inpt, open('output.txt', 'w', encoding='utf-8') as outp:
+    ind = 1
+    for line in inpt.readlines():
+        print(str(ind) + ') ' + line.strip(), file=outp)
+        ind += 1
