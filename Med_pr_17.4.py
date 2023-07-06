@@ -1,5 +1,7 @@
-with open('input.txt', 'r', encoding='utf-8') as inpt, open('output.txt', 'w', encoding='utf-8') as outp:
-    ind = 1
+with open('class_scores.txt', 'r', encoding='utf-8') as inpt, open('new_scores.txt', 'w', encoding='utf-8') as outp:
     for line in inpt.readlines():
-        print(str(ind) + ') ' + line.strip(), file=outp)
-        ind += 1
+        name, skore = line.strip().split()
+        if int(skore) <= 95:
+            print(name+ ' ' + str(int(skore) + 5), file=outp)
+        else:
+            print(name + ' ' + '100', file=outp)
