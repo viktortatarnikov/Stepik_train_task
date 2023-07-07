@@ -1,12 +1,18 @@
-with open('forbidden_words.txt', 'r', encoding='utf-8') as forb, open(input(), 'r', encoding='utf-8') as file:
-    bed_words = forb.read().strip().split()
-    line_old = file.read()
-    line_lower = line_old.lower()
-    for word in bed_words:
-        if word in line_lower:
-            line_lower = line_lower.replace(word, '*'*len(word))
-    for ind in range(len(line_lower)):
-        if line_lower[ind] == '*':
-            print('*', end='')
+with open('cyrillic.txt', 'r', encoding='utf-8') as old_file, open('transliteration.txt', 'w', encoding='utf-8') as new_file:
+    d = {
+        'а': 'a', 'к': 'k', 'х': 'h', 'б': 'b', 'л': 'l', 'ц': 'c', 'в': 'v', 'м': 'm', 'ч': 'ch',
+        'г': 'g', 'н': 'n', 'ш': 'sh', 'д': 'd', 'о': 'o', 'щ': 'shh', 'е': 'e', 'п': 'p', 'ъ': '*',
+        'ё': 'jo', 'р': 'r', 'ы': 'y', 'ж': 'zh', 'с': 's', 'ь': "'", 'з': 'z', 'т': 't', 'э': 'je',
+        'и': 'i', 'у': 'u', 'ю': 'ju', 'й': 'j', 'ф': 'f', 'я': 'ya'
+    }
+
+    line_old = old_file.read().strip()
+    # line_lower = line_old.lower()
+    for simb in line_old:
+        if simb.lower() in d:
+            if simb.isupper():
+                print(d[simb.lower()].capitalize(), file=new_file, end='')
+            else:
+                print(d[simb], file=new_file, end='')
         else:
-            print(line_old[ind], end='')
+            print(simb, file=new_file, end='')
