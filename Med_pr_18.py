@@ -1,18 +1,17 @@
-with open('cyrillic.txt', 'r', encoding='utf-8') as old_file, open('transliteration.txt', 'w', encoding='utf-8') as new_file:
-    d = {
-        'а': 'a', 'к': 'k', 'х': 'h', 'б': 'b', 'л': 'l', 'ц': 'c', 'в': 'v', 'м': 'm', 'ч': 'ch',
-        'г': 'g', 'н': 'n', 'ш': 'sh', 'д': 'd', 'о': 'o', 'щ': 'shh', 'е': 'e', 'п': 'p', 'ъ': '*',
-        'ё': 'jo', 'р': 'r', 'ы': 'y', 'ж': 'zh', 'с': 's', 'ь': "'", 'з': 'z', 'т': 't', 'э': 'je',
-        'и': 'i', 'у': 'u', 'ю': 'ju', 'й': 'j', 'ф': 'f', 'я': 'ya'
-    }
+with open(input(), 'r', encoding='utf-8') as old_file:
+    line_old = old_file.readlines()
+    line_new = []
+    if 'def ' in line_old[0]:
+        line_new.append(line_old[0])
+    for ind in range(1, len(line_old)):
+        if ('def ' in line_old[ind]) and ('#' not in line_old[ind - 1]):
+            line_new.append(line_old[ind])
+    if len(line_new) == 0:
+        print('Best Programming Team')
+    else:
+        for fnc in line_new:
+            print(fnc[4 : fnc.index('(')])
 
-    line_old = old_file.read().strip()
-    # line_lower = line_old.lower()
-    for simb in line_old:
-        if simb.lower() in d:
-            if simb.isupper():
-                print(d[simb.lower()].capitalize(), file=new_file, end='')
-            else:
-                print(d[simb], file=new_file, end='')
-        else:
-            print(simb, file=new_file, end='')
+
+
+
